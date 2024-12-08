@@ -1,7 +1,7 @@
-//Функція для додавання пари до списку
 let addPairButton = document.getElementById('add-pair');
 let inputPair = document.getElementById('input-pair');
 
+//Функція для додавання пари до списку
 function addPair() {
     let trimValueOfInput = inputPair.value.trim();
     let regex = trimValueOfInput.match(/^([a-zA-Z0-9]+)\s*=\s*([a-zA-Z0-9]+)$/);
