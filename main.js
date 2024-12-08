@@ -1,12 +1,13 @@
 //Функція для додавання пари до списку
 let addPairButton = document.getElementById('add-pair');
-addPairButton.onclick = function addPair() {
-    let inputPair = document.getElementById('input-pair');
+let inputPair = document.getElementById('input-pair');
+
+function addPair() {
     let trimValueOfInput = inputPair.value.trim();
     let regex = trimValueOfInput.match(/^([a-zA-Z0-9]+)\s*=\s*([a-zA-Z0-9]+)$/);
     if (regex) {
         let formattedPair = `${regex[1]}=${regex[2]}`;
-        console.log(formattedPair); // Для перевірки результату
+        // console.log(formattedPair); // Для перевірки результату
         let listItem = document.createElement('li');
         listItem.innerText = formattedPair;
 
@@ -19,10 +20,19 @@ addPairButton.onclick = function addPair() {
         pairsList.appendChild(listItem);
 
     } else {
-        alert('Неправильний формат! Введіть пару у форматі name=value.');
+        alert('Неправильний формат. Введіть пару у форматі name=value.');
     }
     inputPair.value = '';
 }
+
+addPairButton.onclick = addPair;
+
+// Обробник для натискання Enter у полі введення
+inputPair.addEventListener('keydown', (event) => {
+    if (event.key === "Enter") {
+        addPair();
+    }
+});
 
 //Функція для сортування
 function sortList(index) {
@@ -42,11 +52,11 @@ function sortList(index) {
 let sortNameButton = document.getElementById('sort-name');
 sortNameButton.onclick = function sortByName() {
     sortList(0); // Викликає sortList з індексом 0 (ім'я)
-}
+};
 let sortValueButton = document.getElementById('sort-value');
 sortValueButton.onclick = function sortByValue() {
     sortList(1); // Викликає sortList з індексом 1 (значення)
-}
+};
 
 //Функція видалення вибраних лішок
 let deleteSelectedButton = document.getElementById('delete-selected');

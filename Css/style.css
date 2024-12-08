@@ -1,11 +1,13 @@
 body {
     background-color: cornflowerblue;
+    font-family: Arial, sans-serif;
+
 }
 
 .container {
     width: 60vw;
     height: 85vh;
-    margin: auto;
+    margin: 30px auto;
     background-color: #ffffff;
     padding: 30px;
     border-radius: 6px;
@@ -88,7 +90,8 @@ button:hover {
         width: 70vw;
         height: 28vh;
     }
-    .input-group input{
+
+    .input-group input {
         width: 70vw;
     }
 
@@ -98,14 +101,23 @@ button:hover {
         gap: 20px;
     }
 
+    .list-section {
+        width: 100%;
+    }
+
+    #pairs-list {
+        width: 100%;
+    }
+
     .buttons-section {
         display: flex;
         flex-direction: column;
         gap: 5px;
         width: 100%;
+        margin-top: 0;
     }
 
-    button:nth-of-type(2) {
+    .buttons-section button {
         width: 100%;
     }
 }
@@ -116,15 +128,13 @@ button:hover {
     .container {
         width: 90vw;
     }
-
     .input-group input {
-        width: 80vw;
+        width: 100%;
         margin-right: 0;
     }
 
     #pairs-list {
-        width: 80vw;
-        height: 200px;
+        height: 150px;
     }
 
     .list-buttons-selection {
